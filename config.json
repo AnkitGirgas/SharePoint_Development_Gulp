@@ -1,8 +1,8 @@
 {
-    "host": "https://devtele2.sharepoint.com",
-    "site": "https://devtele2.sharepoint.com",
-    "username": "admin@devtele2.onmicrosoft.com",
-    "password": "pass@word3",
+    "host": "<<tenant url>>",
+    "site": "<<site url>>",
+    "username": "",
+    "password": "",
     "jsSource": "js/*.js",
     "jsDest": "SiteAssets/JS",
     "cssSource": "css/*.css",
