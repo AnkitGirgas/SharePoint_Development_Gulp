@@ -1,0 +1,17 @@
+{
+  "name": "SharePointInFlash",
+  "version": "1.0.0",
+  "description": "Gulp scripts for quick deployment.",
+  "license": "MIT",
+  "repository": {
+  "type": "git",
+  "url": "www.google.com"
+},
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-spsave": "^1.0.6",
+    "gulp-cached": "^1.1.0",
+    "require-dir": "^0.3.0",
+    "gulp-notify": "^2.2.0"
+  }
+}

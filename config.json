@@ -1,0 +1,12 @@
+{
+    "host": "https://devtele2.sharepoint.com",
+    "site": "https://devtele2.sharepoint.com",
+    "username": "admin@devtele2.onmicrosoft.com",
+    "password": "pass@word3",
+    "jsSource": "js/*.js",
+    "jsDest": "SiteAssets/JS",
+    "cssSource": "css/*.css",
+    "cssDest": "SiteAssets/CSS"
+   
+}
+
