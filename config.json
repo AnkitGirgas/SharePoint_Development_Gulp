@@ -3,10 +3,10 @@
     "site": "<<site url>>",
     "username": "",
     "password": "",
-    "jsSource": "js/*.js",
-    "jsDest": "SiteAssets/JS",
-    "cssSource": "css/*.css",
-    "cssDest": "SiteAssets/CSS"
+    "JSsrc": "js/*.js",
+    "JSdes": "SiteAssets/JS",
+    "CSSsrc": "css/*.css",
+    "CSSdes": "SiteAssets/CSS"
    
 }
 
