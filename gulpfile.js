@@ -1,58 +1,58 @@
-// set up your dependencies
+// gulp dependencies
 var gulp = require('gulp'),
     spsave = require('gulp-spsave'),
     cache = require('gulp-cached'),
     notify = require("gulp-notify"),
     fs = require('fs');
 
-// read an external config file containing credentials and source/destination mapping
+
 var config = JSON.parse(fs.readFileSync('./config.json'));
 
-// task to update javascript files
-gulp.task("updatejs", function () {
-    return gulp.src([config.jsSource])
+
+gulp.task("js", function () {
+    return gulp.src([config.JSsrc])
         .pipe(cache('updated_js'))
         .pipe(spsave({
             siteUrl: config.host,
             username: config.username,
             password: config.password,
-            folder: config.jsDest,
+            folder: config.JSdes,
             flatten: false,
             checkin: true,
             checkinType: 1
         }))
-        .pipe(notify({ message: "Javascript Updated!", onLast: true }));
+        .pipe(notify({ message: "Javascript is Updated!", onLast: true }));
     ;
 });
 
-//task to update CSS
-gulp.task("updatecss", function () {
-    return gulp.src([config.cssSource])
+
+gulp.task("css", function () {
+    return gulp.src([config.CSSsrc])
         .pipe(cache('updated_css'))
         .pipe(spsave({
             siteUrl: config.host,
             username: config.username,
             password: config.password,
-            folder: config.cssDest,
+            folder: config.CSSdes,
             flatten: false,
             checkin: true,
             checkinType: 1
         }))
-       .pipe(notify({ message: "CSS Updated!", onLast: true }));
+       .pipe(notify({ message: "CSS is Updated!", onLast: true }));
 });
 
 
-//runs all build tasks
+//these tasks will run first to upload the files to SP
 gulp.task('default',['watch'], function () {
-    gulp.start('updatejs');
-    gulp.start('updatecss');
+    gulp.start('js');
+    gulp.start('css');
  
    
 });
 
-//creates a watch on filessystem changes
+//creates a watch on files system changes
 gulp.task('watch', function () {
-   gulp.watch(config.jsSource, ['updatejs']);
-    gulp.watch(config.cssSource, ['updatecss']);
+   gulp.watch(config.jsSource, ['js']);
+    gulp.watch(config.cssSource, ['css']);
 
 });
